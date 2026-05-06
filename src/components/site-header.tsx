@@ -12,7 +12,6 @@ import {
   MonitorSmartphone,
   PlugZap,
   ShieldCheck,
-  Workflow,
   X,
 } from "lucide-react";
 
@@ -41,12 +40,6 @@ const services = [
     description: "Connect your tools, automate tasks and reduce manual admin.",
     href: "/services/integration",
     icon: PlugZap,
-  },
-  {
-    title: "API Setup",
-    description: "Reliable API connections, forms, webhooks and third-party services.",
-    href: "/services/api",
-    icon: Workflow,
   },
 ];
 
@@ -152,7 +145,7 @@ export function SiteHeader() {
                     : "invisible translate-y-3 opacity-0"
                 }`}
               >
-                <div className="mx-auto grid max-w-7xl grid-cols-5 gap-4 px-8 py-8">
+                <div className="mx-auto grid max-w-7xl grid-cols-4 gap-4 px-8 py-8">
                   {services.map((service) => {
                     const Icon = service.icon;
 
@@ -191,12 +184,10 @@ export function SiteHeader() {
           </nav>
 
           <div className="hidden lg:block">
-            <div className="hidden lg:block">
-            <ButtonLink href="/contact">
+            <ButtonLink href="/new-project">
               Start Project
               <ArrowRight />
             </ButtonLink>
-          </div>
           </div>
 
           <button
