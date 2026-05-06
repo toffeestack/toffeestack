@@ -29,7 +29,6 @@ const technologies = [
   { title: "WordPress", icon: siWordpress },
   { title: "WooCommerce", icon: siWoocommerce },
   { title: "Shopify", icon: siShopify },
-  { title: "WHMCS", icon: siWhm },
   { title: "Node.js", icon: siNodedotjs },
   { title: "CSS3", icon: siCss },
   { title: "GitHub", icon: siGithub },
