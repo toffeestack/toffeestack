@@ -101,7 +101,7 @@ export function SiteHeader() {
               alt="ToffeeStack logo"
               width={100}
               height={150}
-              className="h-11 w-auto"
+              className="h-10 w-auto"
               priority
             />
             <span className="text-2xl font-black tracking-tight text-[var(--heading)]">
