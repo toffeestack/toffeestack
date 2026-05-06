@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { ButtonLink } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowLeft,
@@ -190,16 +191,12 @@ export function SiteHeader() {
           </nav>
 
           <div className="hidden lg:block">
-            <Link
-              href="/contact"
-              className="group relative inline-flex overflow-hidden rounded-full bg-[var(--primary)] px-6 py-3.5 text-sm font-bold text-white"
-            >
-              <span className="absolute inset-0 origin-left scale-x-0 bg-[var(--secondary)] transition-transform duration-300 ease-out group-hover:scale-x-100" />
-              <span className="relative z-10 flex items-center gap-2">
-                Start Project
-                <ArrowRight className="h-4 w-4" />
-              </span>
-            </Link>
+            <div className="hidden lg:block">
+            <ButtonLink href="/contact">
+              Start Project
+              <ArrowRight />
+            </ButtonLink>
+          </div>
           </div>
 
           <button

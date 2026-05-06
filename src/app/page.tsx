@@ -1,4 +1,9 @@
-import Image from "next/image";
+import { Hero } from "@/components/home/hero";
+import { ServicesOverview } from "@/components/home/services-overview";
+import { HowItWorks } from "@/components/home/how-it-works";
+import { WhyToffeeStack } from "@/components/home/why-toffeestack";
+import { ProofSection } from "@/components/home/proof-section";
+import { TechStack } from "@/components/home/tech-stack";
 
 export const metadata = {
   title: "ToffeeStack | Website Design, Development & Site Care",
@@ -11,8 +16,13 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main>
-      <h1>We build and manage your first business website</h1>
+    <main className="overflow-hidden">
+      <Hero />
+      <ServicesOverview />
+      <HowItWorks />
+      <WhyToffeeStack />
+      <ProofSection />
+      <TechStack />
     </main>
   );
 }

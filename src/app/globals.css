@@ -59,3 +59,20 @@ body {
   color: var(--text);
   font-family: var(--font-dm-sans), sans-serif;
 }
+
+@keyframes tech-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.tech-marquee-track {
+  animation: tech-marquee 28s linear infinite;
+}
+
+.tech-marquee:hover .tech-marquee-track {
+  animation-play-state: paused;
+}
