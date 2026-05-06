@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Privacy Policy | ToffeeStack",
   description:
@@ -161,7 +163,9 @@ export default function PrivacyPage() {
       <section className="relative overflow-hidden bg-white pb-24 pt-14 sm:pb-28">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="mb-8 flex items-center gap-2 text-sm font-bold">
-            <span className="text-[#5E6475]">Home</span>
+            <Link href="/" className="text-[#5E6475] transition-colors hover:text-[#305CDE]">
+                Home
+            </Link>
             <span className="text-black/30">/</span>
             <span className="text-[#050816]">Privacy Policy</span>
           </div>
@@ -171,17 +175,17 @@ export default function PrivacyPage() {
               Privacy Policy
             </h1>
 
-            <p className="mt-8 text-lg leading-8 text-[#5E6475]">
+            <p className="mt-8 text-base leading-8 text-[#5E6475]">
               Last updated: 6 May 2026
             </p>
 
-            <p className="mt-8 text-lg leading-8 text-[#5E6475]">
+            <p className="mt-8 text-base leading-8 text-[#5E6475]">
               This Privacy Policy explains how ToffeeStack collects, uses,
               stores, and protects personal information when you use our website,
               contact us, or engage our services.
             </p>
 
-            <p className="mt-6 text-lg leading-8 text-[#5E6475]">
+            <p className="mt-6 text-base leading-8 text-[#5E6475]">
               We are committed to handling your information responsibly,
               transparently, and securely. By using this website or working with
               ToffeeStack, you agree to the practices outlined within this

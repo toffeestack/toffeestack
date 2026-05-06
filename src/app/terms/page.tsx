@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Terms | ToffeeStack",
   description:
@@ -153,7 +155,9 @@ export default function TermsPage() {
       <section className="relative overflow-hidden bg-white pb-24 pt-14 sm:pb-28">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="mb-8 flex items-center gap-2 text-sm font-bold">
-            <span className="text-[#5E6475]">Home</span>
+            <Link href="/" className="text-[#5E6475] transition-colors hover:text-[#305CDE]">
+                Home
+            </Link>
 
             <span className="text-black/30">/</span>
 

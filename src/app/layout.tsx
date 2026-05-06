@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { ScrollToTop } from "@/components/layout/scroll-to-top";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -12,6 +13,9 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "ToffeeStack",
   description: "Modern web development agency",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -22,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={dmSans.variable}>
+        <ScrollToTop />
         <SiteHeader />
         {children}
         <SiteFooter />
