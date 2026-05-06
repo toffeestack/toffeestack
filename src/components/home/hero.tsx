@@ -21,8 +21,11 @@ export function Hero() {
     <section className="relative overflow-hidden pt-6 pb-16 sm:pt-10 sm:pb-20 lg:pt-14 lg:pb-24">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 bg-[#F8FAFD]" />
+
         <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(to_right,#305CDE_1px,transparent_1px),linear-gradient(to_bottom,#305CDE_1px,transparent_1px)] [background-size:44px_44px]" />
+
         <div className="absolute left-0 top-40 h-80 w-80 rounded-full bg-[var(--primary)]/10 blur-3xl" />
+
         <div className="absolute right-0 top-20 h-80 w-80 rounded-full bg-[var(--secondary)]/10 blur-3xl" />
       </div>
 
@@ -39,10 +42,10 @@ export function Hero() {
             </h1>
 
             <p className="mt-7 max-w-xl text-lg leading-8 text-[var(--muted-foreground)]">
-              ToffeeStack builds clean, professional websites for businesses
-              that want to look better online without dealing with the technical
-              side. We can also keep your website updated, secure and running
-              smoothly for you.
+              ToffeeStack builds and looks after business websites properly,
+              without the technical stress. We create clean, professional
+              websites and provide ongoing support, updates and maintenance so
+              everything keeps running smoothly.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -71,7 +74,7 @@ export function Hero() {
           </div>
 
           <div className="relative">
-            <div className="mx-auto max-w-[520px] rounded-[2rem] border border-white/60 bg-white/80 p-4 shadow-[0_30px_80px_rgba(15,23,42,0.12)] backdrop-blur-xl">
+            <div className="mx-auto max-w-[520px] rounded-[2rem] bg-white/80 p-4 shadow-[0_30px_80px_rgba(15,23,42,0.12)] backdrop-blur-xl">
               <div className="overflow-hidden rounded-[1.6rem] bg-[#050816] p-5 text-white">
                 <div className="flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-[#FF5C96]" />
@@ -81,39 +84,45 @@ export function Hero() {
 
                 <div className="mt-7 space-y-5">
                   <p className="font-mono text-sm text-white/35">
-                    {"// Your website, handled for you"}
+                    {"// Your website, handled properly"}
                   </p>
 
                   <div className="rounded-3xl bg-white/[0.08] p-5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]">
                     <Layers3 className="h-5 w-5 text-[#7DD3FC]" />
-                    <h3 className="mt-4 text-base font-black">
+
+                    <h2 className="mt-4 text-base font-black">
                       A Website That Looks Professional
-                    </h3>
+                    </h2>
+
                     <p className="mt-2 text-sm leading-6 text-white/65">
                       Clear pages, modern design and simple wording that helps
-                      people understand what you do.
+                      people quickly understand what your business does.
                     </p>
                   </div>
 
                   <div className="rounded-3xl bg-white/[0.08] p-5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]">
                     <ShieldCheck className="h-5 w-5 text-[#86EFAC]" />
-                    <h3 className="mt-4 text-base font-black">
-                      Ongoing Help After Launch
-                    </h3>
+
+                    <h2 className="mt-4 text-base font-black">
+                      Ongoing Support After Launch
+                    </h2>
+
                     <p className="mt-2 text-sm leading-6 text-white/65">
-                      Updates, small changes, support and care so you are not
-                      left trying to manage everything alone.
+                      Updates, security checks, fixes and ongoing help so you
+                      are never left trying to manage everything yourself.
                     </p>
                   </div>
 
                   <div className="rounded-3xl bg-white/[0.08] p-5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]">
                     <HeartHandshake className="h-5 w-5 text-[#F9A8D4]" />
-                    <h3 className="mt-4 text-base font-black">
-                      Plain English, No Jargon
-                    </h3>
+
+                    <h2 className="mt-4 text-base font-black">
+                      Clear Advice, No Confusing Terms
+                    </h2>
+
                     <p className="mt-2 text-sm leading-6 text-white/65">
-                      We explain things clearly and keep the process simple from
-                      start to finish.
+                      Everything is explained clearly in plain English, with a
+                      simple process from start to finish.
                     </p>
                   </div>
                 </div>

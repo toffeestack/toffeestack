@@ -7,24 +7,24 @@ import { SectionHeading } from "@/components/ui/section-heading";
 const reasons = [
   {
     title: "10+ Years Building Websites",
-    text: "Experience building websites, fixing problems and understanding what businesses actually need online.",
+    text: "Years of experience building websites and helping businesses improve their online presence.",
     icon: Award,
   },
   {
     title: "Modern And Reliable Setup",
-    text: "Your website is built using a modern setup designed to be fast, secure and easy to manage.",
+    text: "Built using modern technology designed to keep your website fast, secure and reliable.",
     icon: ShieldCheck,
   },
   {
     title: "Ongoing Support Available",
-    text: "After launch, we can help with updates, small changes, support and general website care.",
+    text: "Support is available after launch for updates, changes, fixes and general website help.",
     icon: Headphones,
   },
   {
-    title: "Built To Grow With Your Business",
-    text: "Blogs, booking systems, online stores and new features can all be added later as your business grows.",
+    title: "Built To Grow Later",
+    text: "Blogs, booking systems, online stores and extra features can all be added in future.",
     icon: Rocket,
-    },
+  },
 ];
 
 export function WhyToffeeStack() {
@@ -34,8 +34,8 @@ export function WhyToffeeStack() {
         <SectionHeading
           align="center"
           eyebrow="Why Work With ToffeeStack"
-          title="A simpler way to get a professional website."
-          description="You get more than just a website. You get someone who understands how to build it properly, keep it running and make it easy for your customers to use."
+          title="Professional websites with long-term support."
+          description="ToffeeStack focuses on building websites properly, explaining things clearly and providing ongoing support when businesses need it."
         />
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -45,13 +45,13 @@ export function WhyToffeeStack() {
             return (
               <div
                 key={reason.title}
-                className="rounded-[2rem] border border-[#E8EDF7] bg-[#F8FAFD] p-7 shadow-[0_12px_40px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                className="rounded-[2rem] border border-[#E8EDF7] bg-[#F8FAFD] p-7 shadow-[0_12px_40px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#D8E2F2] hover:bg-white hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#EEF3FF] text-[var(--primary)]">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#EEF3FF] text-[var(--secondary)]">
                   <Icon className="h-7 w-7" />
                 </div>
 
-                <h3 className="mt-6 text-xl font-black text-[var(--heading)]">
+                <h3 className="mt-6 text-xl font-black leading-tight text-[var(--heading)]">
                   {reason.title}
                 </h3>
 
