@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Mail } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
@@ -11,37 +10,13 @@ const contents = [
   "What to improve first",
 ];
 
-function shortTitle(title: string) {
-  return title.length > 15 ? `${title.slice(0, 15)}...` : title;
-}
-
 export function BlogArticleContents() {
-  const articleTitle =
-    "How A Professional Website Helps Your Business Look More Trusted";
-
   return (
-    <Section className="bg-white pt-0 overflow-visible">
+    <Section className="overflow-visible bg-white pt-0">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[270px_1fr] lg:items-start">
           <aside className="lg:sticky lg:top-28">
-            <div className="flex flex-wrap items-center gap-2 text-sm text-[var(--muted-foreground)]">
-              <Link href="/" className="transition hover:text-[var(--primary)]">
-                Home
-              </Link>
-              <span className="text-[var(--primary)]">/</span>
-              <Link
-                href="/blog"
-                className="transition hover:text-[var(--primary)]"
-              >
-                Blog
-              </Link>
-              <span className="text-[var(--primary)]">/</span>
-              <span className="text-[var(--heading)]">
-                {shortTitle(articleTitle)}
-              </span>
-            </div>
-
-            <div className="mt-8 rounded-[2rem] border border-[#E8EDF7] bg-[#F8FAFD] p-6 shadow-[0_12px_40px_rgba(15,23,42,0.04)]">
+            <div className="rounded-[2rem] border border-[#E8EDF7] bg-[#F8FAFD] p-6 shadow-[0_12px_40px_rgba(15,23,42,0.04)]">
               <h2 className="text-xl font-black text-[var(--heading)]">
                 Share
               </h2>

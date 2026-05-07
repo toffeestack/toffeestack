@@ -1,5 +1,3 @@
-import { ArrowRight } from "lucide-react";
-
 import { BookCallModal } from "@/components/contact/book-call-modal";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";

@@ -40,7 +40,7 @@ const services = [
 
 export function ServicesOverview() {
   return (
-    <Section className="bg-white">
+    <Section className="bg-white" id="services">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>

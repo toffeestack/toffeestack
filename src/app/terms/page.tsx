@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { Container } from "@/components/ui/container";
+import { PageHero } from "@/components/ui/page-hero";
 
 export const metadata = {
   title: "Terms | ToffeeStack",
@@ -152,29 +153,19 @@ The latest version will always be published on this website.`,
 export default function TermsPage() {
   return (
     <main className="overflow-hidden bg-white">
-      <section className="relative overflow-hidden bg-white pb-24 pt-14 sm:pb-28">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="mb-8 flex items-center gap-2 text-sm font-bold">
-            <Link href="/" className="text-[#5E6475] transition-colors hover:text-[#305CDE]">
-                Home
-            </Link>
+      <PageHero
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Terms" }]}
+        title="Terms"
+        meta={
+          <p className="text-base leading-8 text-[var(--muted-foreground)]">
+            Last updated: 6 May 2026
+          </p>
+        }
+      />
 
-            <span className="text-black/30">/</span>
-
-            <span className="text-[#050816]">Terms</span>
-          </div>
-
-          <div className="max-w-4xl">
-            <h1 className="text-5xl font-black leading-[0.95] tracking-tight text-[#050816] sm:text-6xl lg:text-[4.3rem]">
-              Terms
-            </h1>
-
-            <p className="mt-8 text-lg leading-8 text-[#5E6475]">
-              Last updated: 6 May 2026
-            </p>
-          </div>
-
-          <div className="mt-20 space-y-16">
+      <section className="bg-white pb-24 pt-2 sm:pt-4 sm:pb-28">
+        <Container>
+          <div className="space-y-14">
             {sections.map((section) => (
               <div key={section.number}>
                 <div className="flex items-center gap-4">
@@ -200,7 +191,7 @@ export default function TermsPage() {
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
     </main>
   );

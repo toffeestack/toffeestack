@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -11,6 +10,7 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { Container } from "@/components/ui/container";
 import { TextInput } from "@/components/ui/text-input";
 
 const services = [
@@ -48,37 +48,9 @@ export function ServiceChoiceForm() {
   const [selectedService, setSelectedService] = useState<string | null>(null);
 
   return (
-    <section className="relative overflow-hidden bg-white pb-16 pt-10 sm:pb-20 lg:pb-24 lg:pt-14">
-      <div className="absolute inset-0 -z-10 bg-[#F8FAFD]" />
-      <div className="absolute inset-0 -z-10 opacity-[0.04] [background-image:linear-gradient(to_right,#305CDE_1px,transparent_1px),linear-gradient(to_bottom,#305CDE_1px,transparent_1px)] [background-size:44px_44px]" />
-
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="flex items-center gap-2 text-sm font-bold">
-          <Link
-            href="/"
-            className="text-[var(--muted-foreground)] transition hover:text-[var(--primary)]"
-          >
-            Home
-          </Link>
-
-          <span className="text-[var(--primary)]">/</span>
-
-          <span className="text-[var(--heading)]">New Project</span>
-        </div>
-
-        <div className="mt-10 max-w-3xl">
-          <h1 className="text-5xl font-black leading-[0.95] tracking-tight text-[var(--heading)] sm:text-6xl lg:text-[4.3rem]">
-            What are you looking to build?
-          </h1>
-
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--muted-foreground)]">
-            Select the service that best matches your project. We’ll then ask a
-            few simple questions to understand your business, goals and what
-            you’re looking to build.
-          </p>
-        </div>
-
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-5 xl:grid-cols-4">
+    <section className="bg-white pb-16 pt-2 sm:pt-4 sm:pb-20 lg:pb-24">
+      <Container>
+        <div className="grid grid-cols-2 gap-4 sm:gap-5 xl:grid-cols-4">
           {services.map((service) => {
             const Icon = service.icon;
             const isActive = selectedService === service.id;
@@ -132,7 +104,7 @@ export function ServiceChoiceForm() {
         </div>
 
         {selectedService && (
-          <div className="relative mt-12 overflow-hidden rounded-[2.5rem] border border-[#E8EDF7] bg-[#F8FAFD] px-6 py-10 shadow-[0_24px_80px_rgba(15,23,42,0.06)] sm:px-8 lg:px-12 lg:py-16">
+          <div className="relative mt-10 overflow-hidden rounded-[2.5rem] border border-[#E8EDF7] bg-[#F8FAFD] px-6 py-10 shadow-[0_24px_80px_rgba(15,23,42,0.06)] sm:px-8 lg:px-12 lg:py-16">
             <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(to_right,#305CDE_1px,transparent_1px),linear-gradient(to_bottom,#305CDE_1px,transparent_1px)] [background-size:44px_44px]" />
             <div className="absolute -left-28 -top-28 h-72 w-72 rounded-full bg-[var(--primary)]/10 blur-3xl" />
             <div className="absolute -bottom-28 -right-28 h-72 w-72 rounded-full bg-[var(--secondary)]/10 blur-3xl" />
@@ -191,7 +163,7 @@ export function ServiceChoiceForm() {
             </div>
           </div>
         )}
-      </div>
+      </Container>
     </section>
   );
 }
