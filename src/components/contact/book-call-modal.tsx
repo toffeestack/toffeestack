@@ -152,8 +152,8 @@ Note: We understand ToffeeStack will contact us as close to the selected time as
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 px-5 backdrop-blur-sm">
-          <div className="relative flex min-h-[720px] w-full max-w-2xl flex-col rounded-[2rem] bg-white p-5 shadow-[0_30px_90px_rgba(15,23,42,0.25)] sm:p-6">
+        <div className="fixed inset-0 z-[100] overflow-y-auto bg-black/50 px-5 py-8 backdrop-blur-sm sm:py-10">
+  <div className="relative mx-auto flex min-h-[720px] w-full max-w-2xl flex-col rounded-[2rem] bg-white p-5 shadow-[0_30px_90px_rgba(15,23,42,0.25)] sm:p-6">
             <button
               onClick={closeModal}
               className="absolute right-5 top-5 flex h-11 w-11 cursor-pointer items-center justify-center rounded-2xl bg-[#F5F7FA] text-[var(--heading)]"

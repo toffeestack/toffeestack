@@ -78,7 +78,7 @@ export function ServiceChoiceForm() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-5 xl:grid-cols-4">
           {services.map((service) => {
             const Icon = service.icon;
             const isActive = selectedService === service.id;
@@ -88,7 +88,7 @@ export function ServiceChoiceForm() {
                 key={service.id}
                 type="button"
                 onClick={() => setSelectedService(service.id)}
-                className={`group relative cursor-pointer overflow-hidden rounded-[2rem] border p-7 text-left transition-all duration-300 ${
+                className={`group relative flex min-h-[175px] cursor-pointer flex-col overflow-hidden rounded-[2rem] border p-5 text-left transition-all duration-300 sm:min-h-[260px] sm:p-7 ${
                   isActive
                     ? "border-transparent bg-[var(--primary)] text-white shadow-[0_24px_80px_rgba(48,92,222,0.22)]"
                     : "border-[#E8EDF7] bg-[#F8FAFD] text-[var(--heading)] shadow-[0_12px_40px_rgba(15,23,42,0.04)] hover:-translate-y-1 hover:border-[#D8E2F2] hover:bg-white hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
@@ -101,7 +101,7 @@ export function ServiceChoiceForm() {
                   </>
                 )}
 
-                <div className="relative">
+                <div className="relative flex h-full flex-col">
                   <div
                     className={`flex h-14 w-14 items-center justify-center rounded-2xl ${
                       isActive
@@ -112,12 +112,12 @@ export function ServiceChoiceForm() {
                     <Icon className="h-7 w-7" />
                   </div>
 
-                  <h2 className="mt-6 text-xl font-black leading-tight">
+                  <h2 className="mt-6 text-lg font-black leading-tight sm:text-xl">
                     {service.title}
                   </h2>
 
                   <p
-                    className={`mt-4 text-sm leading-7 ${
+                    className={`mt-4 hidden text-sm leading-7 sm:block ${
                       isActive
                         ? "text-white/80"
                         : "text-[var(--muted-foreground)]"
