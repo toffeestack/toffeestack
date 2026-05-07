@@ -1,0 +1,211 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  ADMIN
+  CUSTOMER
+}
+
+enum ProjectStatus {
+  REQUESTED
+  QUOTED
+  ACCEPTED
+  IN_PROGRESS
+  REVIEW
+  LIVE
+  COMPLETE
+  CANCELLED
+}
+
+enum QuoteStatus {
+  DRAFT
+  SENT
+  ACCEPTED
+  DECLINED
+  EXPIRED
+}
+
+enum PaymentStatus {
+  OUTSTANDING
+  PAID
+  OVERDUE
+  CANCELLED
+}
+
+enum WebsiteStatus {
+  PLANNING
+  DEVELOPMENT
+  LIVE
+  PAUSED
+  CANCELLED
+}
+
+enum ServiceType {
+  SITE_CARE
+  HOSTING
+  EMAIL
+  MAINTENANCE
+  ONE_OFF
+}
+
+enum ServiceStatus {
+  ACTIVE
+  PAUSED
+  CANCELLED
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String   @unique
+  password  String
+  role      UserRole @default(CUSTOMER)
+
+  customerProfile CustomerProfile?
+  messages        ChatMessage[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CustomerProfile {
+  id           String  @id @default(cuid())
+  userId       String  @unique
+  businessName String?
+  phone        String?
+  address      String?
+  city         String?
+  county       String?
+  postCode     String?
+
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  projects  Project[]
+  quotes    Quote[]
+  payments  Payment[]
+  websites  Website[]
+  services  Service[]
+  threads   ChatThread[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Project {
+  id          String        @id @default(cuid())
+  customerId  String
+  title       String
+  description String?
+  status      ProjectStatus @default(REQUESTED)
+
+  customer CustomerProfile @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  website  Website?
+  quotes   Quote[]
+  payments Payment[]
+  threads  ChatThread[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Website {
+  id         String        @id @default(cuid())
+  customerId String
+  projectId  String?       @unique
+  domain     String
+  status     WebsiteStatus @default(PLANNING)
+  notes      String?
+
+  customer CustomerProfile @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  project  Project?        @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  services Service[]
+  threads  ChatThread[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Service {
+  id          String        @id @default(cuid())
+  customerId  String
+  websiteId   String?
+  type        ServiceType
+  name        String
+  description String?
+  monthlyPrice Int?
+  status      ServiceStatus @default(ACTIVE)
+
+  customer CustomerProfile @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  website  Website?        @relation(fields: [websiteId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Quote {
+  id          String      @id @default(cuid())
+  customerId  String
+  projectId   String?
+  title       String
+  description String?
+  total       Int
+  status      QuoteStatus @default(DRAFT)
+
+  customer CustomerProfile @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  project  Project?        @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  payments Payment[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Payment {
+  id          String        @id @default(cuid())
+  customerId  String
+  projectId   String?
+  quoteId     String?
+  title       String
+  amount      Int
+  status      PaymentStatus @default(OUTSTANDING)
+  dueDate     DateTime?
+  paidAt      DateTime?
+
+  customer CustomerProfile @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  project  Project?        @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  quote    Quote?          @relation(fields: [quoteId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ChatThread {
+  id         String  @id @default(cuid())
+  customerId String
+  projectId  String?
+  websiteId  String?
+  title      String?
+
+  customer CustomerProfile @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  project  Project?        @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  website  Website?        @relation(fields: [websiteId], references: [id], onDelete: SetNull)
+  messages ChatMessage[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ChatMessage {
+  id       String @id @default(cuid())
+  threadId String
+  senderId String
+  message  String
+
+  thread ChatThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  sender User       @relation(fields: [senderId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}

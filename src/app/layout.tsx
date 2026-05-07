@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
 import { ScrollToTop } from "@/components/layout/scroll-to-top";
+import { SiteShell } from "@/components/layout/site-shell";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -27,9 +26,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={dmSans.variable}>
         <ScrollToTop />
-        <SiteHeader />
-        {children}
-        <SiteFooter />
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );
