@@ -42,7 +42,7 @@ const scrollingItems = [...technologies, ...technologies];
 export function TechStack() {
   return (
     <Section className="bg-white pt-0">
-      <div className="bg-[#F8FAFD] py-16 lg:py-20">
+      <div className="py-16 lg:py-20">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--primary)]">
