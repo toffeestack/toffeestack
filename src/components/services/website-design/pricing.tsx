@@ -51,6 +51,7 @@ const plans = [
 ];
 
 const careFeatures = [
+  "Domain registration",
   "Website hosting included",
   "Managed website support",
   "@yourdomain.com email address",

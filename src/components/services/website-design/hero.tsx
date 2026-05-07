@@ -20,12 +20,6 @@ export function WebsiteDesignHero() {
               Home
             </Link>
             <span className="text-[var(--primary)]">/</span>
-            <Link
-              href="/services"
-              className="transition hover:text-[var(--primary)]"
-            >
-              Services
-            </Link>
             <span className="text-[var(--primary)]">/</span>
             <span className="text-[var(--heading)]">Website Design</span>
           </div>
