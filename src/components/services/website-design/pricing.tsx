@@ -60,7 +60,8 @@ const careFeatures = [
 
 export function WebsiteDesignPricing() {
   return (
-    <Section id="pricing" className="bg-white">
+    <Section className="bg-white">
+      <div id="pricing">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm uppercase tracking-[0.2em] text-[var(--primary)]">
@@ -151,6 +152,7 @@ export function WebsiteDesignPricing() {
           ))}
         </div>
       </Container>
+      </div>
     </Section>
   );
 }
