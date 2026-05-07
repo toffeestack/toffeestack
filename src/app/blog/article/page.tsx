@@ -19,7 +19,7 @@ export default function BlogArticlePage() {
         image="/blog/website-trust.jpg"
       />
 
-      <BlogArticleContents category="Website Design" />
+      <BlogArticleContents />
     </main>
   );
 }
